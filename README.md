@@ -20,7 +20,7 @@ XPWeb is a REST API interface for X-Plane using X-Plane Connect, allowing users 
 
 1. Download the latest binary release from the [releases page](https://github.com/alireza787b/XPWeb/releases).
 2. Extract the downloaded zip file.
-3. Run the `main.exe` file located in the `output/main` directory.
+3. Run the `main.exe` file.
 4. The API server will start, and you can access the API documentation at `http://localhost:7712/docs`.
 
 ### From Source
