@@ -2,20 +2,44 @@
 import sys
 import os
 
-# Add the project's root directory to the Python path
-current_dir = os.path.dirname(os.path.abspath(__file__))
-project_root = os.path.abspath(os.path.join(current_dir, '..'))
-sys.path.append(project_root)
+def print_welcome_message(host, port):
+    welcome_message = f"""
+    ********************************************
+    *         Welcome to XPWeb API Server      *
+    ********************************************
+    XPWeb is a REST API for interfacing with X-Plane via X-Plane Connect.
+    
+    Server is running on:
+    Host: {host}
+    Port: {port}
 
-from config.config import load_config
-from core.fastapi_app import create_app
+    API Documentation: http://{host}:{port}/docs
+    GitHub Repository: https://github.com/alireza787b/XPWeb
+
+    Press CTRL+C to quit.
+    """
+    print(welcome_message)
 
 if __name__ == "__main__":
-    import uvicorn
+    print("Starting XPWeb API Server...")
+    try:
+        import uvicorn
+        from app.config.config import load_config
+        from app.core.fastapi_app import create_app
 
-    config = load_config()
-    app = create_app()
-    host = config['server']['host']
-    port = config['server']['port']
+        print("Loading configuration...")
+        config = load_config()
+        print("Configuration loaded successfully.")
+        
+        app = create_app()
+        host = config['server']['host']
+        port = config['server']['port']
 
-    uvicorn.run(app, host=host, port=port)
+        print_welcome_message(host, port)
+        print("Starting Uvicorn server...")
+        uvicorn.run(app, host=host, port=port)
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        input("Press Enter to exit...")
+
+    input("Press Enter to exit...")  # Keeps the console open
