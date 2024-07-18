@@ -1,0 +1,5 @@
+{
+    "python.analysis.extraPaths": [
+        "./resources/XPlaneConnect/Python3/src"
+    ]
+}
