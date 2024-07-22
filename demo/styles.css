@@ -1,0 +1,121 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+.logo {
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+}
+section#introduction {
+    padding: 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    margin: 0 20px;
+    border-radius: 5px;
+}
+main {
+    flex: 1;
+    padding: 20px;
+    overflow: auto;
+    margin: 0 20px;
+}
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.tab-button {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    margin: 0 5px;
+    transition: background-color 0.3s ease;
+}
+.tab-button:hover, .tab-button.active {
+    background-color: #555;
+}
+.tab-content {
+    display: none;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.tab-content.active {
+    display: block;
+}
+form {
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+input, button {
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+button:hover {
+    background-color: #218838;
+}
+.output {
+    display: none; /* Only display when there's content */
+    background-color: #e9ecef;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-family: monospace;
+}
+.toggle-control {
+    display: none;
+    margin-top: 10px;
+}
+.toggle-control a {
+    color: #007bff;
+    cursor: pointer;
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    clear: both;
+    position: relative;
+    margin-top: 20px;
+}
+a, a:visited {
+    color: #007bff;
+}
+a:hover {
+    color: #0056b3;
+}

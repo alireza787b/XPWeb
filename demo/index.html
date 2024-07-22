@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XPWeb API Demo</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="XPWeb Logo" class="logo">
+        <h1>XPWeb API Demo</h1>
+        <p>Real-time X-Plane Communication via XPWeb.</p>
+    </header>
+    <section id="introduction">
+        <h2>Welcome to the XPWeb API Interface</h2>
+        <p>Before starting, ensure that the XPWeb server is running, and X-Plane is open with XPlane Connect installed. Ensure that the server host and port in your XPWeb config.json match those in this script (default is localhost:7712).</p> 
+        <p>For complete setup details and to download necessary files, visit our <a href="https://github.com/alireza787b/XPWeb" target="_blank">GitHub repository</a>.
+        <p>You can access the auto-generated FastAPI documentation at <a href="http://localhost:7712/docs" target="_blank">http://localhost:7712/docs</a> for detailed API endpoint information.</p>
+    </section>
+    <main>
+        <div class="tabs">
+            <button class="tab-button" data-target="commands">Commands</button>
+            <button class="tab-button active" data-target="datarefs">Datarefs</button>
+        </div>
+        <div id="commands" class="tab-content">
+            <h2>Commands</h2>
+            <form id="commands-form">
+                <label for="command">Command:</label>
+                <input type="text" id="command" name="command" placeholder="Enter command, e.g., sim/operation/pause_toggle" required>
+                <button type="submit">Run</button>
+            </form>
+            <div id="commands-result" class="output"></div>
+        </div>
+        <div id="datarefs" class="tab-content active">
+            <h2>Datarefs</h2>
+            <div class="dataref-section">
+                <h3>Read Datarefs</h3>
+                <form id="datarefs-form">
+                    <label for="dataref">Dataref:</label>
+                    <input type="text" id="dataref" name="dataref" placeholder="Enter dataref, e.g., sim/flightmodel/position/latitude">
+                    <button type="submit">Get Data</button>
+                </form>
+                <div id="read-datarefs-result" class="output"></div>
+                <div id="read-datarefs-toggle" class="toggle-control">
+                    <a href="#" class="toggle-json">JSON</a> | <a href="#" class="toggle-formatted">Formatted</a>
+                </div>
+            </div>
+            <div class="dataref-section">
+                <h3>Write Datarefs</h3>
+                <form id="set-datarefs-form">
+                    <label for="set-dataref">Set Dataref:</label>
+                    <input type="text" id="set-dataref" name="set-dataref" placeholder="Enter dataref name, e.g., sim/operation/override/overrides">
+                    <input type="text" id="set-value" name="set-value" placeholder="Enter value to set, e.g., 1">
+                    <button type="submit">Set Data</button>
+                </form>
+                <div id="write-datarefs-result" class="output"></div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>Visit the <a href="https://github.com/alireza787b/XPWeb">GitHub page</a> for more information and updates.</p>
+        <p>Version 1.1</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

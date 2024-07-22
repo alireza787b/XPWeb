@@ -1,6 +1,16 @@
-# app/main.py
 import sys
 import os
+import uvicorn
+
+# Ensure the path for X-Plane Connect is set up correctly
+current_dir = os.path.dirname(os.path.abspath(__file__))
+project_root = os.path.abspath(os.path.join(current_dir, '..'))
+sys.path.append(project_root)
+
+from config.config import setup_xpc_path, load_config
+setup_xpc_path()  # Call this early to ensure the path is set
+
+from core.fastapi_app import create_app
 
 def print_welcome_message(host, port):
     welcome_message = f"""
@@ -23,10 +33,6 @@ def print_welcome_message(host, port):
 if __name__ == "__main__":
     print("Starting XPWeb API Server...")
     try:
-        import uvicorn
-        from app.config.config import load_config
-        from app.core.fastapi_app import create_app
-
         print("Loading configuration...")
         config = load_config()
         print("Configuration loaded successfully.")

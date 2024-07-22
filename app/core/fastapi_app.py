@@ -1,7 +1,7 @@
 # app/core/fastapi_app.py
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.api import datarefs, commands
+from api import datarefs, commands
 
 def create_app():
     app = FastAPI()

@@ -2,7 +2,7 @@
 from fastapi import APIRouter, HTTPException
 from typing import List, Dict, Any, Union
 from pydantic import BaseModel
-from app.core.xplane_connect import XPlaneConnectWrapper
+from core.xplane_connect import XPlaneConnectWrapper
 
 class DatarefResponse(Dict[str, Any]):
     dataref: Union[str, List[str]]
