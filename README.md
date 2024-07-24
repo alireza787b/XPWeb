@@ -25,11 +25,12 @@ XPWeb is a REST API interface for X-Plane using X-Plane Connect, allowing users 
 
 ### From Source
 
-1. Clone the repository:
+1. Clone the repository and initialize submodules:
 
     ```sh
     git clone https://github.com/alireza787b/XPWeb.git
     cd XPWeb
+    git submodule update --init --recursive
     ```
 
 2. Create a virtual environment and activate it:
@@ -50,6 +51,7 @@ XPWeb is a REST API interface for X-Plane using X-Plane Connect, allowing users 
     ```sh
     python app/main.py
     ```
+
 
 ## Usage
 
