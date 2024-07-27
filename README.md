@@ -61,6 +61,21 @@ XPWeb is a REST API interface for X-Plane using X-Plane Connect, allowing users 
 - **From Source:**
   Run the application using the command: `python app/main.py`.
 
+
+## Demo
+
+We've included a demo in the `demo` folder to show how you can interact with X-Plane through a web interface and javascript. To use the demo:
+
+1. Ensure that the XPWeb server is running.
+2. X-Plane should be open, and XPlane Connect should be installed and configured correctly.
+3. Open the `index.html` file in a web browser to access the demo.
+
+- The demo allows you to send commands and set/get datarefs directly from your browser.
+- The server host and port in the script.js of the demo should match those in your XPWeb `config.json` file (default is `localhost:7712`).
+- You can find further instructions and download necessary files from the [XPWeb GitHub repository](https://github.com/alireza787b/XPWeb).
+- The FastAPI auto-generated documentation can be accessed at `http://localhost:7712/docs` for detailed API endpoint information.
+
+
 ### Accessing API Documentation
 
 Once the server is running, you can access the API documentation at `http://localhost:7712/docs`.
