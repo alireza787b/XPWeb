@@ -2,6 +2,8 @@
 # XPWeb
 
 XPWeb is a REST API interface for X-Plane using X-Plane Connect, allowing users to easily access and modify datarefs or trigger commands from any app, browser, or web app. This eliminates the need to handle complex UDP communication and packets.
+![image](https://github.com/user-attachments/assets/2148ef0a-e2f4-4d63-b740-8efc4d21d2f8)
+
 
 ## Features
 
